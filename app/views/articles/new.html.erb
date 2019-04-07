@@ -1,8 +1,13 @@
+<div class="row" style="padding-top:10%;">
+	<div class="col"></div>
+	<div class="col-md-7">
+
 <h1>Create a New Article!</h1>
 
 <%= form_for :article, url: articles_path do |f|%>
 
 <!-- Checking for errors -->
+<div class="field" style="100%;">
 
 <% if @article.errors.any? %>
 <div id="error_explanation">
@@ -23,20 +28,24 @@
 <% end %>
 	<p>
 		<%= f.label :title %>
-		<%= f.text_field :title %>
+		<%= f.text_field :title, class: 'form-control' %>
 	</p>
 
 	<p>
 		<%= f.label :text %>
-		<%= f.text_area :text %>
+		<%= f.text_area :text, class: 'form-control' %>
 	</p>
 	<p>
-		<%= f.submit %>
+		<%= f.submit class: 'btn btn-lg btn-success' %>
 			
 	</p>
+</div>
 <% end %>
 
 <p>
-	<%= link_to 'Back', articles_path %>
-	<%= link_to 'Home', welcome_index_path %>
+	<%= link_to 'Back', articles_path, class: 'btn btn-md btn-info' %>
+	<%= link_to 'Home', welcome_index_path, class: 'btn btn-md btn-primary'   %>
 </p>
+</div>
+<div class="col"></div>
+</div>
