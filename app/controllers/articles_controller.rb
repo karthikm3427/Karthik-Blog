@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def new
+		@article = Article.new
 	end
 
 	def show
@@ -26,9 +27,12 @@ class ArticlesController < ApplicationController
 
 	def create
 		@article = Article.new(article_params)
-		@article.save
+		if @article.save
 
-		redirect_to @article
+		   redirect_to @article
+	    else
+		   render 'new'
+	    end
 	end
 
 	def destroy
