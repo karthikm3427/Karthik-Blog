@@ -11,5 +11,23 @@ module ApplicationHelper
 		end	
 	end 
 
+
+	#create a list of countries of world in a array.
+	def your_country
+		countries = ["Afghanistan",
+					"Albania",
+						"Algeria",
+						"American Samoa",
+						"Andorra",
+						"Angola",
+						"Anguilla"]
+		countries.each do |country|
+			my_country = "#{country}"
+		end
+		# my_country = options_for_select(['country1', 'country2', 'country3', 'country4'])
+		return countries
+	end
+
+
 end
 

@@ -22,7 +22,7 @@
 				<%= f.text_field :l_name, placeholder: "Last Name", class: "form-control mr-sm-2 sm_style"%>
 	            <%= f.text_field :email, placeholder: "Your Email", class: "form-control mr-sm-2 sm_style"%>
 	            <div class="form-control2 sm_style">
-	            <%= f.select :country, options_for_select(['country1', 'country2', 'country3', 'country4']),
+	            <%= f.select :country, your_country,
 	                         prompt: " Select your Country"%>
 	            </div>
 	            <%= f.submit "Submit", class: "btn btn-light my-2 my-sm-0" %>
