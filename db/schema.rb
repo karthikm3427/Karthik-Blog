@@ -10,14 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_13_160121) do
+ActiveRecord::Schema.define(version: 2019_04_14_113814) do
 
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+# Could not dump table "articles" because of following StandardError
+#   Unknown type 'photo' for column 'attachment'
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"

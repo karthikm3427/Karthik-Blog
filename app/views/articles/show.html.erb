@@ -1,8 +1,12 @@
 <div class="row">
 	<div class="col"></div>
 	<div class="col-md-7">
-<%= image_tag 'banner1.jpg', style: "width:100%" %>
-<p><h2>TITLE</h2>
+		<% if @article.photo.present? %>
+		<%= image_tag(@article.photo, style: "width:100%") %>
+		<% else %>
+		<%= image_tag 'banner1.jpg', style: "width:100%" %>
+		<% end %>
+<p><h2>TITLE</h2><br>
   <strong><%= @article.title %></strong><br>
 </p>
 
@@ -12,7 +16,18 @@
 
 <p><h3>ARTICLE</h3><br>
    <%= @article.text %>
+   </p>
+   <p>
+   <% if @article.music.present? %>
+   <%= audio_tag(@article.music, controls: true, style: "width:100%")%>
+   <% end %>
 </p>
+<p>
+   <% if @article.movie.present? %>
+   <%= video_tag(@article.movie, controls: true, type: "video/mp4", style: "width:100%")%>
+   <% end %>
+</p>
+
 
 <hr>
 <%= render 'comments/comment'%>

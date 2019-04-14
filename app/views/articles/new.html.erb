@@ -4,7 +4,7 @@
 
 <h1>Create a New Article!</h1>
 
-<%= form_for :article, url: articles_path do |f|%>
+<%= form_for :article, url: articles_path, html: {multipart: true} do |f|%>
 
 <!-- Checking for errors -->
 <div class="field" style="100%;">
@@ -34,6 +34,18 @@
 	<p>
 		<%= f.label :text %>
 		<%= f.text_area :text, class: 'form-control' %>
+	</p>
+	<p>
+		<%= f.label :photo %><br>
+		<%= f.file_field :photo, class: 'form-control'%>
+	</p>
+	<p>
+		<%= f.label :music %><br>
+		<%= f.file_field :music, class: 'form-control'%>
+	</p>
+	<p>
+		<%= f.label :movie %><br>
+		<%= f.file_field :movie, class: 'form-control'%>
 	</p>
 	<p>
 		<%= f.submit class: 'btn btn-lg btn-success' %>
